@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources — Ashish Tripathi</title>
+<meta name="description" content="Free analytics resources: GTM audit checklist, GA4 event naming guide, BigQuery SQL library, Power BI performance guide, consent mode checklist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0B1220;--teal:#1D9E75;--teal-dark:#0F6E56;--fog:#F7F9FC;--slate:#9AA6BC;--slate-dark:#55617A;--amber:#EF9F27;--border:#E6EAF2;--text:#18202F}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',sans-serif;font-size:16.5px;line-height:1.75;color:var(--text);background:#fff}
+.wrap{max-width:840px;margin:0 auto;padding:0 28px}
+nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:10}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1120px}
+nav .logo{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:15px;color:var(--ink)}
+nav a{color:var(--slate-dark);text-decoration:none;font-size:14.5px;font-weight:500}
+header{background:var(--ink);color:#fff;padding:80px 0 64px}
+header .k{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.14em;color:#25C08B;margin-bottom:14px}
+header h1{font-size:40px;font-weight:700;letter-spacing:-0.02em}
+header p{color:var(--slate);margin-top:12px;font-size:18px}
+article{padding:64px 0;border-bottom:1px solid var(--border)}
+article .tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal-dark);letter-spacing:.1em}
+article h2{font-size:30px;font-weight:700;letter-spacing:-0.015em;margin:8px 0 8px}
+article .intro{color:var(--slate-dark);margin-bottom:24px}
+h3{font-size:18px;font-weight:600;margin:26px 0 8px}
+ul,ol{padding-left:24px;margin-bottom:14px}
+li{margin-bottom:7px}
+code,pre{font-family:'JetBrains Mono',monospace;font-size:13.5px}
+code{background:var(--fog);border:1px solid var(--border);border-radius:5px;padding:1px 7px}
+pre{background:var(--ink);color:#DCE4F2;border-radius:12px;padding:20px 22px;overflow-x:auto;line-height:1.6;margin:14px 0}
+pre .c{color:#7C8AA5}
+.tip{border-left:3px solid var(--amber);background:#FDF6EA;padding:12px 18px;border-radius:0 8px 8px 0;margin:16px 0;font-size:15.5px}
+footer{padding:48px 0;text-align:center;font-size:14px;color:var(--slate-dark)}
+footer a{color:var(--teal-dark);text-decoration:none}
+@media(max-width:760px){header h1{font-size:28px}article h2{font-size:24px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap"><span class="logo">ashish.tripathi</span><a href="index.html">← Back to portfolio</a></div></nav>
+
+<header><div class="wrap">
+  <p class="k">RESOURCES</p>
+  <h1>Free tools I wish existed when I started.</h1>
+  <p>From real enterprise engagements. No email gate. Bookmark and use.</p>
+</div></header>
+
+<article id="gtm-audit"><div class="wrap">
+  <span class="tag">CHECKLIST</span>
+  <h2>GTM audit checklist</h2>
+  <p class="intro">The audit I run in week one of every engagement. Order matters — inventory before judgment.</p>
+  <h3>1. Inventory (find everything that fires)</h3>
+  <ul>
+    <li>Export container JSON; list every tag, trigger, and variable</li>
+    <li>Crawl key templates with the Network tab open — find tags injected <em>outside</em> GTM (hardcoded, CMS plugins, third-party embeds)</li>
+    <li>Check for a second GTM container or legacy analytics snippets (UA, old pixels)</li>
+    <li>Map every tag to an owner and a business purpose; no owner = removal candidate</li>
+  </ul>
+  <h3>2. Data layer</h3>
+  <ul>
+    <li>Is there a documented data layer spec? (Usually: no. That's finding #1.)</li>
+    <li>Are values pushed before GTM loads on every template?</li>
+    <li>Consistent types? (<code>"12.99"</code> vs <code>12.99</code> breaks downstream)</li>
+    <li>Ecommerce objects match GA4's schema, not UA's leftover format</li>
+  </ul>
+  <h3>3. Triggers &amp; tags</h3>
+  <ul>
+    <li>Duplicate firing: same event, two tags, or one tag on two overlapping triggers</li>
+    <li>All-pages triggers on tags that should be scoped</li>
+    <li>Paused tags older than 6 months — delete, don't hoard</li>
+    <li>Naming convention exists and is followed (see the GA4 naming guide below)</li>
+  </ul>
+  <h3>4. Consent &amp; privacy</h3>
+  <ul>
+    <li>Do non-essential tags wait for consent state? Prove it with network logs (see consent checklist)</li>
+    <li>Consent initialization fires before any tag decision</li>
+    <li>PII in URLs, data layer, or custom dimensions (emails in query strings are everywhere)</li>
+  </ul>
+  <h3>5. QA &amp; governance</h3>
+  <ul>
+    <li>Who can publish? (More than 3 people = incidents waiting)</li>
+    <li>Are versions named and described, or all "Untitled change"?</li>
+    <li>Test plan for releases, or does everyone test in production?</li>
+  </ul>
+  <div class="tip">The audit always finds tags nobody remembers adding. Inventory before architecture.</div>
+</div></article>
+
+<article id="ga4-naming"><div class="wrap">
+  <span class="tag">GUIDE</span>
+  <h2>GA4 event naming guide</h2>
+  <p class="intro">Conventions that keep a property queryable two years and three teams later.</p>
+  <h3>Rules</h3>
+  <ul>
+    <li><strong>snake_case, always.</strong> GA4 is case-sensitive: <code>sign_up</code> and <code>Sign_Up</code> are different events forever.</li>
+    <li><strong>object_action pattern:</strong> <code>form_submit</code>, <code>video_play</code>, <code>search_results_view</code> — sorts related events together in every report.</li>
+    <li><strong>Use GA4's recommended events where they exist</strong> (<code>purchase</code>, <code>login</code>, <code>sign_up</code>) — they unlock built-in reporting. Invent only when nothing fits.</li>
+    <li><strong>Never encode values in names.</strong> <code>click_red_button_homepage</code> is wrong; use <code>cta_click</code> + parameters <code>cta_id</code>, <code>page_type</code>.</li>
+    <li><strong>Parameters carry detail, events carry behavior.</strong> Ask: "will someone filter by this?" → parameter. "Is this a different user behavior?" → event.</li>
+    <li><strong>Registry doc first.</strong> No event ships until it's in a shared sheet: name, parameters, trigger condition, owner, example payload.</li>
+  </ul>
+  <h3>Why it matters downstream</h3>
+  <p>Every event name becomes a value in BigQuery's <code>event_name</code> column. Inconsistent naming means every SQL query starts with a <code>CASE WHEN</code> cleanup block — forever. Naming is a data engineering decision disguised as a marketing one.</p>
+  <div class="tip">Budget one custom dimension registry per property. GA4's limits (50 custom event-scoped dimensions) run out faster than teams expect.</div>
+</div></article>
+
+<article id="sql-library"><div class="wrap">
+  <span class="tag">SQL LIBRARY</span>
+  <h2>BigQuery SQL library for GA4</h2>
+  <p class="intro">Copy-paste starting points for the GA4 export. Test on <code>bigquery-public-data.ga4_obfuscated_sample_ecommerce</code>.</p>
+  <h3>Event deduplication</h3>
+  <pre><span class="c">-- GA4 export can contain duplicate events; dedup on a composite key</span>
+SELECT * EXCEPT(rn) FROM (
+  SELECT *, ROW_NUMBER() OVER (
+    PARTITION BY user_pseudo_id, event_name, event_timestamp,
+      (SELECT value.int_value FROM UNNEST(event_params)
+       WHERE key = 'ga_session_id')
+    ORDER BY event_timestamp
+  ) AS rn
+  FROM `project.dataset.events_*`
+  WHERE _TABLE_SUFFIX BETWEEN '20260101' AND '20260131'
+) WHERE rn = 1;</pre>
+  <h3>Session table (the export doesn't have one)</h3>
+  <pre>SELECT
+  user_pseudo_id,
+  (SELECT value.int_value FROM UNNEST(event_params)
+   WHERE key = 'ga_session_id') AS session_id,
+  MIN(event_timestamp) AS session_start,
+  MAX(event_timestamp) AS session_end,
+  COUNTIF(event_name = 'page_view') AS pageviews,
+  COUNTIF(event_name = 'purchase') AS purchases
+FROM `project.dataset.events_*`
+GROUP BY 1, 2;</pre>
+  <h3>Reconciliation vs the GA4 UI</h3>
+  <pre><span class="c">-- When stakeholders say "BigQuery doesn't match GA4":</span>
+<span class="c">-- 1. Same date range in the property timezone, not UTC</span>
+<span class="c">-- 2. UI counts sessions via approximation (HLL); export is exact</span>
+<span class="c">-- 3. Consent Mode modeled data exists ONLY in the UI, never in export</span>
+SELECT COUNT(DISTINCT CONCAT(user_pseudo_id,
+  (SELECT value.int_value FROM UNNEST(event_params)
+   WHERE key = 'ga_session_id'))) AS sessions_exact
+FROM `project.dataset.events_*`
+WHERE _TABLE_SUFFIX = '20260115';</pre>
+  <div class="tip">Full versions with tests live in my GitHub pipeline repo — including funnel and attribution models.</div>
+</div></article>
+
+<article id="pbi-performance"><div class="wrap">
+  <span class="tag">GUIDE</span>
+  <h2>Power BI performance guide</h2>
+  <p class="intro">Why your dashboard is slow — in the order you should check.</p>
+  <h3>1. Model (80% of problems)</h3>
+  <ul>
+    <li>Star schema, not one wide table and not snowflaked chains</li>
+    <li>Remove columns you don't use — column count hurts more than row count in VertiPaq</li>
+    <li>Avoid bi-directional relationships; they're a last resort, not a default</li>
+    <li>Integer keys, not text; no high-cardinality columns (timestamps to the second, GUIDs) unless required</li>
+  </ul>
+  <h3>2. DAX</h3>
+  <ul>
+    <li>Measures over calculated columns wherever possible</li>
+    <li>Beware iterators (<code>SUMX</code>, <code>FILTER</code>) over large tables inside visuals</li>
+    <li>Use variables (<code>VAR</code>) to stop recomputing the same expression</li>
+    <li>Performance Analyzer → copy the slow query → optimize in DAX Studio</li>
+  </ul>
+  <h3>3. Visuals</h3>
+  <ul>
+    <li>Every visual = at least one query. 30 visuals on a page = 30+ queries per interaction</li>
+    <li>Top N + drill beats rendering 10,000 points nobody reads</li>
+    <li>Slicers with high-cardinality fields re-query everything; use filter pane instead</li>
+  </ul>
+  <h3>4. Refresh &amp; storage</h3>
+  <ul>
+    <li>Incremental refresh for anything over ~5M rows</li>
+    <li>Push transformations upstream to the warehouse (Dataform/dbt) — Power Query is the wrong place for heavy lifting</li>
+    <li>Paginated reports for pixel-perfect operational output; don't force interactive visuals into that job</li>
+  </ul>
+  <div class="tip">Rule from the SAP BEx migration: transform in the warehouse, model in the semantic layer, decorate in the report. Slow dashboards almost always violate the first step.</div>
+</div></article>
+
+<article id="consent-checklist"><div class="wrap">
+  <span class="tag">CHECKLIST</span>
+  <h2>Consent mode checklist</h2>
+  <p class="intro">Compliance you can prove with network logs — not promises.</p>
+  <h3>Setup</h3>
+  <ul>
+    <li>Consent initialization (default state: denied) fires before GTM tag decisions on every template</li>
+    <li>CMP (Termly/OneTrust) is the <em>only</em> source of consent truth — one gate, not per-tag hacks</li>
+    <li>All non-essential tags (GA4, Ads, Meta, LinkedIn) gated on consent state via blocking triggers or built-in consent checks</li>
+    <li>Google tags use Consent Mode signals so denied states degrade gracefully</li>
+    <li>Hardcoded tags outside GTM found and migrated or wrapped (they will exist — check)</li>
+  </ul>
+  <h3>Verification (the part everyone skips)</h3>
+  <ol>
+    <li>Fresh incognito session, EU geo (VPN) → open DevTools Network tab <em>before</em> loading the page</li>
+    <li>Filter requests by vendor domains: <code>google-analytics.com</code>, <code>doubleclick.net</code>, <code>facebook.com</code>, <code>linkedin.com</code></li>
+    <li>Pre-consent: zero requests from gated vendors (Consent Mode pings to Google are cookieless and expected — know the difference)</li>
+    <li>Decline consent → still zero. Accept → tags fire once, with consent state attached</li>
+    <li>Repeat across templates (home, product, checkout, blog) and browsers; slow connections expose race conditions</li>
+    <li>Re-test after every GTM publish — compliance regresses silently</li>
+  </ol>
+  <h3>Evidence for legal</h3>
+  <ul>
+    <li>Screenshot/HAR file of pre-consent network state per template</li>
+    <li>Tag inventory with consent classification and owner</li>
+    <li>Change log: what was gated, when, by whom</li>
+  </ul>
+  <div class="tip">If you can't prove it with network logs, you don't have it. The banner is theater; the gate is the compliance.</div>
+</div></article>
+
+<footer><div class="wrap">
+  <p>Written by <a href="index.html">Ashish Tripathi</a> — Enterprise Digital Analytics Consultant · <a href="mailto:tashitripathi35@gmail.com">tashitripathi35@gmail.com</a></p>
+</div></footer>
+
+</body>
+</html>

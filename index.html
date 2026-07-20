@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashish Tripathi — Enterprise Digital Analytics Consultant</title>
+<meta name="description" content="Enterprise Digital Analytics Consultant. End-to-end measurement systems: GA4, GTM, BigQuery, Dataform, Power BI. GDPR-compliant analytics for Gartner, Air Canada, Hallmark, Applebee's.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  analytics_storage: 'denied',
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied'
+});
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<style>
+:root{
+  --ink:#0B1220; --ink2:#111A2E; --teal:#1D9E75; --teal-bright:#25C08B; --teal-dark:#0F6E56;
+  --fog:#F7F9FC; --slate:#9AA6BC; --slate-dark:#55617A; --amber:#EF9F27;
+  --border:#E6EAF2; --card:#FFFFFF; --text:#18202F;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Inter',sans-serif;font-size:17px;line-height:1.75;color:var(--text);background:#fff}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+h2{font-size:42px;font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:14px}
+h3{font-size:21px;font-weight:600}
+section{padding:110px 0}
+a{color:var(--teal-dark);text-decoration:none}
+.kicker{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.14em;color:var(--teal-dark);display:block;margin-bottom:14px}
+.lede{font-size:19px;color:var(--slate-dark);max-width:660px}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.on{opacity:1;transform:none}
+
+nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);z-index:10}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+nav .logo{font-family:'JetBrains Mono',monospace;font-weight:500;font-size:15px;color:var(--ink)}
+nav ul{display:flex;gap:24px;list-style:none;align-items:center}
+nav ul a{font-size:14.5px;color:var(--slate-dark);font-weight:500}
+nav ul a:hover{color:var(--ink)}
+nav .cv-btn{background:var(--ink);color:#fff;padding:9px 18px;border-radius:8px}
+
+.hero{background:var(--ink);color:#fff;padding:130px 0 80px;position:relative;overflow:hidden}
+.hero .grid-bg{position:absolute;inset:0;background-image:linear-gradient(#16213a 1px,transparent 1px),linear-gradient(90deg,#16213a 1px,transparent 1px);background-size:56px 56px;opacity:.35;pointer-events:none}
+.hero .wrap{position:relative}
+.hero .eyebrow{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.16em;color:var(--teal-bright);margin-bottom:22px}
+.hero h1{font-size:58px;font-weight:700;letter-spacing:-0.025em;line-height:1.08;max-width:880px;margin-bottom:26px}
+.hero h1 em{font-style:normal;color:var(--teal-bright)}
+.hero .lede{color:var(--slate);font-size:20px;max-width:660px;margin-bottom:40px}
+.btn{display:inline-block;padding:15px 30px;border-radius:10px;font-weight:600;font-size:16px;transition:transform .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:hover{background:var(--teal-bright)}
+.btn-ghost{border:1px solid #2A3650;color:#C9D2E3;margin-left:14px}
+.proof{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1E2A44;border:1px solid #1E2A44;border-radius:14px;overflow:hidden;margin-top:64px}
+.proof div{background:var(--ink2);padding:22px 24px}
+.proof .n{font-family:'JetBrains Mono',monospace;font-size:24px;color:#fff}
+.proof .n b{color:var(--teal-bright);font-weight:500}
+.proof .l{font-size:13px;color:var(--slate);margin-top:2px}
+
+.trust{background:var(--fog);border-bottom:1px solid var(--border);padding:30px 0}
+.trust .wrap{display:flex;flex-wrap:wrap;gap:12px 44px;align-items:center;justify-content:center}
+.trust span{color:var(--slate-dark);font-weight:600;font-size:16.5px}
+.trust .label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--slate);font-weight:400;letter-spacing:.12em}
+
+.article{max-width:880px}
+.article p{margin-bottom:18px;font-size:16.5px}
+.article h3{font-size:24px;margin:36px 0 12px;letter-spacing:-0.01em}
+.role-chip{display:inline-block;background:#E4F5EE;color:var(--teal-dark);font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:6px 14px;border-radius:999px;margin:4px 6px 4px 0}
+
+.pipe{background:var(--ink);border-radius:18px;padding:36px;margin:40px 0}
+.pipe-steps{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.pipe-steps button{font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:9px 14px;border-radius:8px;border:1px solid #2A3650;background:transparent;color:var(--slate);cursor:pointer;transition:all .2s}
+.pipe-steps button.active{background:var(--teal);border-color:var(--teal);color:#fff}
+.pipe-steps button:hover:not(.active){border-color:var(--slate)}
+.pipe-panel{display:none}
+.pipe-panel.active{display:block;animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.pipe-panel .pt{color:#fff;font-size:17px;font-weight:600;margin-bottom:6px}
+.pipe-panel .pd{color:var(--slate);font-size:14.5px;margin-bottom:16px;max-width:720px}
+pre{font-family:'JetBrains Mono',monospace;font-size:13px;background:#060B16;color:#D8E1F0;border:1px solid #1E2A44;border-radius:12px;padding:20px 22px;overflow-x:auto;line-height:1.6}
+pre .c{color:#5A6B8C}
+pre .k{color:#25C08B}
+pre .s{color:#EFB35B}
+.pipe img{width:100%;border-radius:10px;border:1px solid #1E2A44}
+.pipe .nav-btns{margin-top:20px;display:flex;gap:10px}
+.pipe .nav-btns button{font-size:13px;padding:8px 18px;border-radius:8px;border:1px solid #2A3650;background:transparent;color:#C9D2E3;cursor:pointer}
+
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:48px}
+.metric{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:transform .2s,box-shadow .2s}
+.metric:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,18,32,.06)}
+.metric .n{font-family:'JetBrains Mono',monospace;font-size:34px;color:var(--ink)}
+.metric .n b{color:var(--teal);font-weight:500}
+.metric .l{font-size:14px;color:var(--slate-dark);margin-top:6px;line-height:1.5}
+
+.arch-flow{background:var(--ink);border-radius:18px;padding:44px;margin-top:48px}
+.arch-col{display:flex;flex-direction:column;align-items:center}
+.stage{width:100%;max-width:520px;background:var(--ink2);border:1px solid #1E2A44;border-radius:12px;padding:16px 22px;display:flex;justify-content:space-between;align-items:baseline;opacity:.35;transform:scale(.97);transition:all .5s ease}
+.stage.lit{opacity:1;transform:none;border-color:var(--teal)}
+.stage .sn{font-family:'JetBrains Mono',monospace;font-size:14.5px;color:#fff}
+.stage .sd{font-size:12.5px;color:var(--slate)}
+.arrow{height:26px;width:2px;background:#2A3650;margin:4px 0;position:relative;transition:background .5s}
+.arrow.lit{background:var(--teal)}
+.arrow.lit::after{content:'';position:absolute;bottom:-1px;left:-3px;border:4px solid transparent;border-top-color:var(--teal)}
+
+.proj{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:44px;margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.proj .tag{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal-dark);letter-spacing:.1em}
+.proj .story{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.08em;color:#9c6410;background:#FDF6EA;border-radius:999px;padding:4px 12px;margin-left:8px;vertical-align:1px}
+.proj h3{font-size:27px;font-weight:700;letter-spacing:-0.015em;margin:10px 0 12px}
+.proj .sub{color:var(--slate-dark);font-size:16px;margin-bottom:18px}
+.proj dl{font-size:15px;margin-bottom:18px}
+.proj dt{font-weight:600;color:var(--ink);margin-top:12px}
+.proj dd{color:var(--slate-dark)}
+.proj .impact{border-left:3px solid var(--amber);padding:8px 0 8px 18px;font-size:16px;background:#FDF6EA;border-radius:0 8px 8px 0}
+.proj .impact b{font-family:'JetBrains Mono',monospace;color:#9c6410}
+.proj img{width:100%;display:block;border-radius:10px;border:1px solid var(--border)}
+.proj svg{width:100%;height:auto;display:block}
+.visual{background:var(--fog);border:1px solid var(--border);border-radius:14px;padding:24px}
+.vis-note{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);margin-top:10px;text-align:center;letter-spacing:.06em}
+.dash{background:var(--ink);border-radius:12px;padding:20px}
+.dash .row{display:flex;gap:10px;margin-bottom:10px}
+.dash .tile{flex:1;background:var(--ink2);border:1px solid #1E2A44;border-radius:9px;padding:12px}
+.dash .tile .l{font-size:10px;color:var(--slate);font-family:'JetBrains Mono',monospace}
+.dash .tile .v{font-size:18px;color:#fff;font-family:'JetBrains Mono',monospace;margin-top:2px}
+.dash .tile .v span{font-size:10.5px;color:var(--teal-bright)}
+.bars{display:flex;align-items:flex-end;gap:6px;height:80px;background:var(--ink2);border:1px solid #1E2A44;border-radius:9px;padding:12px}
+.bars i{flex:1;background:var(--teal);border-radius:2px 2px 0 0}
+.bars i:nth-child(odd){background:#17805f}
+
+.flow-h{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:48px}
+.wstep{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:18px 22px;flex:1;min-width:150px;transition:transform .2s,box-shadow .2s}
+.wstep:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,18,32,.06)}
+.wstep .wn{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal-dark)}
+.wstep .wt{font-weight:600;font-size:15.5px;margin-top:2px}
+.wstep .wd{font-size:13px;color:var(--slate-dark);margin-top:4px;line-height:1.5}
+.wsep{font-family:'JetBrains Mono',monospace;color:var(--slate)}
+
+.phil{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:48px}
+.phil .p-card{border-left:3px solid var(--teal);background:var(--fog);border-radius:0 12px 12px 0;padding:24px 26px}
+.phil .p-card .pn{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--teal-dark)}
+.phil .p-card h3{font-size:18px;margin:4px 0 8px}
+.phil .p-card p{font-size:14.5px;color:var(--slate-dark)}
+
+.gh{background:var(--ink);color:#fff;border-radius:18px;padding:48px;margin-top:48px;display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+.gh h3{font-size:26px;font-weight:700;margin-bottom:12px}
+.gh p{color:var(--slate);font-size:16px}
+.gh .repos{list-style:none}
+.gh .repos li{background:var(--ink2);border:1px solid #1E2A44;border-radius:10px;padding:14px 18px;margin-bottom:10px}
+.gh .repos li a{color:var(--teal-bright);font-family:'JetBrains Mono',monospace;font-size:13.5px}
+.gh .repos li span{color:var(--slate);display:block;font-size:13px;margin-top:2px}
+.gh .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.gh .chips i{font-style:normal;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#C9D2E3;border:1px solid #2A3650;border-radius:999px;padding:2px 9px}
+
+#resources .res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:48px}
+.res{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:28px;transition:transform .2s,box-shadow .2s}
+.res:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(11,18,32,.06)}
+.res .mono-tag{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--slate);letter-spacing:.08em}
+.res h3{font-size:18px;margin:8px 0 8px}
+.res p{font-size:14.5px;color:var(--slate-dark);margin-bottom:12px}
+
+.about-grid{display:grid;grid-template-columns:auto 1fr;gap:56px;margin-top:48px;align-items:start}
+.portrait{width:230px;height:230px;border-radius:18px;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:56px;position:sticky;top:100px;overflow:hidden}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.about-copy p{margin-bottom:18px;font-size:16.5px}
+.pull{border-left:3px solid var(--teal);padding:8px 0 8px 20px;font-size:18px;color:var(--ink);font-weight:500;margin:24px 0}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
+.stack span{font-family:'JetBrains Mono',monospace;font-size:12.5px;background:var(--fog);border:1px solid var(--border);border-radius:999px;padding:6px 14px;color:var(--slate-dark)}
+
+.contact{background:var(--ink);color:#fff;text-align:center}
+.contact h2{color:#fff}
+.contact p{color:var(--slate);max-width:560px;margin:0 auto 32px}
+.contact .links{margin-top:26px;font-size:15px}
+.contact .links a{color:var(--slate);margin:0 14px}
+footer{background:var(--ink);border-top:1px solid #1c2942;padding:24px 0;text-align:center;font-size:13.5px;color:var(--slate-dark)}
+
+@media(max-width:860px){
+  .hero h1{font-size:34px}
+  h2{font-size:29px}
+  section{padding:64px 0}
+  nav ul li.hide-m{display:none}
+  .proof{grid-template-columns:1fr 1fr}
+  .proj,.gh,.about-grid{grid-template-columns:1fr}
+  .portrait{position:static;width:160px;height:160px;font-size:40px}
+  .wsep{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="logo">ashish.tripathi</span>
+    <ul>
+      <li class="hide-m"><a href="#featured">Featured</a></li>
+      <li class="hide-m"><a href="#architecture">Architecture</a></li>
+      <li class="hide-m"><a href="#projects">Projects</a></li>
+      <li class="hide-m"><a href="#github">GitHub</a></li>
+      <li class="hide-m"><a href="#resources">Resources</a></li>
+      <li class="hide-m"><a href="#about">About</a></li>
+      <li><a class="cv-btn" href="Ashish_Tripathi_CV_v4.pdf" download>Resume</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="grid-bg"></div>
+  <div class="wrap">
+    <p class="eyebrow">ENTERPRISE DIGITAL ANALYTICS CONSULTANT</p>
+    <h1>From tracking code to boardroom dashboard — analytics enterprises can <em>trust</em>.</h1>
+    <p class="lede">I build end-to-end measurement systems for enterprise brands that need data they can defend to legal, finance, and the board.</p>
+    <a class="btn btn-primary" href="#featured">See how the pipeline works</a>
+    <a class="btn btn-ghost" href="mailto:tashitripathi35@gmail.com">Email me</a>
+    <div class="proof">
+      <div><div class="n">10<b>+</b></div><div class="l">years, enterprise analytics</div></div>
+      <div><div class="n">15<b>+</b></div><div class="l">executive dashboards shipped</div></div>
+      <div><div class="n">50<b>+</b></div><div class="l">tracking issues solved</div></div>
+      <div><div class="n" style="font-size:15px;line-height:2.1">GA4→BQ→Dataform→PBI</div><div class="l">the stack I own end to end</div></div>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="wrap">
+    <span class="label">TRUSTED BY TEAMS AT</span>
+    <span>Gartner</span><span>Air Canada</span><span>Hallmark</span>
+    <span>Applebee's / IHOP</span><span>Taj Hotels</span><span>Hasbro</span>
+  </div>
+</div>
+
+<section id="featured">
+  <div class="wrap">
+    <span class="kicker reveal">FEATURED PROJECT · ENGINEERING DEEP DIVE</span>
+    <h2 class="reveal">One pipeline, one truth</h2>
+    <p class="lede reveal">Click through the pipeline stage by stage. Stages 3–5 show my real production code — client identifiers removed, logic untouched.</p>
+    <div class="article reveal">
+      <h3>Business context</h3>
+      <p>A multi-brand restaurant enterprise (Applebee's / IHOP) ran marketing, SEO, and product decisions across teams that each pulled numbers from different tools — GA4 UI, ad platforms, spreadsheets. Session counts were inflated by duplicate events, no two reports agreed, and monthly reviews opened with arguments about whose numbers were right.</p>
+      <h3>My role</h3>
+      <p>
+        <span class="role-chip">solution architecture</span><span class="role-chip">GTM + data layer design</span><span class="role-chip">SQL / Dataform modeling</span><span class="role-chip">Power BI semantic model</span><span class="role-chip">stakeholder adoption</span>
+      </p>
+    </div>
+
+    <div class="pipe reveal">
+      <div class="pipe-steps" role="tablist">
+        <button class="active" data-p="0">1 · GTM data layer</button>
+        <button data-p="1">2 · GA4 event</button>
+        <button data-p="2">3 · BigQuery raw</button>
+        <button data-p="3">4 · Dedup SQL</button>
+        <button data-p="4">5 · Dataform session model</button>
+        <button data-p="5">6 · Power BI</button>
+      </div>
+
+      <div class="pipe-panel active">
+        <p class="pt">Standardized data layer — one spec, every template</p>
+        <p class="pd">Replaced ad-hoc tags with a documented data layer contract. Engineering pushes objects; GTM only reads. No tag ever scrapes the DOM.</p>
+        <pre><span class="c">// pushed by the site before GTM loads — the contract</span>
+window.dataLayer.push({
+  event: <span class="s">'search_results_view'</span>,
+  search_term: <span class="s">'gluten free menu'</span>,
+  search_results_count: 0,   <span class="c">// zero-result searches: found for the first time</span>
+  page_type: <span class="s">'search'</span>
+});</pre>
+      </div>
+
+      <div class="pipe-panel">
+        <p class="pt">GA4 custom event — instrumented beyond the defaults</p>
+        <p class="pd">Registered as a custom dimension so zero-result searches become queryable — the GA4 UI alone can't answer "what do users search for that we don't have?"</p>
+        <pre>event_name:            search_results_view
+event_params:
+  search_term:         <span class="s">"gluten free menu"</span>
+  search_results_count: 0
+  page_type:           <span class="s">"search"</span>
+  ga_session_id:       1737455512</pre>
+      </div>
+
+      <div class="pipe-panel">
+        <p class="pt">Staging — flatten the raw export (production code)</p>
+        <p class="pd">The daily <code style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#EFB35B">events_*</code> export nests everything in arrays and has no session table. Staging unnests it once — and the incremental filter only scans a 3-day window instead of full history, which cut daily processing cost dramatically.</p>
+        <pre><span class="c">-- definitions/staging/stg_ga4_events.sqlx (sanitized)</span>
+SELECT
+  PARSE_DATE(<span class="s">'%Y%m%d'</span>, event_date)  AS event_date,
+  TIMESTAMP_MICROS(event_timestamp) AS event_timestamp,
+  user_pseudo_id,
+  (SELECT value.int_value FROM UNNEST(event_params)
+   WHERE key = <span class="s">'ga_session_id'</span>)      AS session_id,
+  COALESCE(
+    (SELECT value.double_value FROM UNNEST(event_params) WHERE key = <span class="s">'value'</span>),
+    ecommerce.purchase_revenue
+  ) AS event_value
+FROM `client_project.analytics_XXXXXX.events_*`
+WHERE ${when(incremental(),
+  `_TABLE_SUFFIX BETWEEN
+     FORMAT_DATE(<span class="s">'%Y%m%d'</span>, DATE_SUB(CURRENT_DATE(), INTERVAL 3 DAY))
+     AND FORMAT_DATE(<span class="s">'%Y%m%d'</span>, CURRENT_DATE())`)}
+<span class="c">-- ⭐ was missing: pipeline scanned full history daily before this fix</span></pre>
+      </div>
+
+      <div class="pipe-panel">
+        <p class="pt">Deduplication — a deterministic key, enforced by the build (production code)</p>
+        <p class="pd">Every event gets an MD5 identity key; the incremental merge on <code style="font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#EFB35B">uniqueKey</code> makes duplicates structurally impossible — replayed exports and double-fired tags can't create them.</p>
+        <pre>config {
+  type: <span class="s">"incremental"</span>,
+  uniqueKey: [<span class="s">"event_key"</span>],
+  bigquery: {
+    partitionBy: <span class="s">"event_date"</span>,
+    clusterBy: [<span class="s">"event_name"</span>, <span class="s">"user_pseudo_id"</span>]
+  }
+}
+
+<span class="c">-- deterministic event identity: same event can never land twice</span>
+TO_HEX(MD5(CONCAT(
+  CAST(event_date AS STRING),
+  IFNULL(user_pseudo_id, <span class="s">''</span>),
+  IFNULL(user_id, <span class="s">''</span>),
+  CAST(IFNULL(custom_timestamp, 0) AS STRING),
+  CAST(event_timestamp AS STRING)
+))) AS event_key</pre>
+      </div>
+
+      <div class="pipe-panel">
+        <p class="pt">Dataform sessionization — the session table GA4 never gives you (production code)</p>
+        <p class="pd">First-touch attribution resolved inside the session, geo edge cases handled so BI visuals never show blank rows, partitioned and clustered for cheap queries.</p>
+        <pre><span class="c">-- definitions/intermediate/int_sessions.sqlx (sanitized)</span>
+config {
+  type: <span class="s">"incremental"</span>, uniqueKey: [<span class="s">"session_key"</span>],
+  bigquery: { partitionBy: <span class="s">"session_date"</span>,
+              clusterBy: [<span class="s">"channel_group"</span>, <span class="s">"device_category"</span>] }
+}
+
+SELECT
+  ANY_VALUE(session_key)  AS session_key,
+  MIN(event_timestamp)    AS session_start_timestamp,
+  <span class="c">-- first-touch attribution inside the session</span>
+  ARRAY_AGG(session_source ORDER BY event_timestamp LIMIT 1)[OFFSET(0)] AS session_source,
+  ARRAY_AGG(channel_group  ORDER BY event_timestamp LIMIT 1)[OFFSET(0)] AS channel_group,
+  <span class="c">-- geo fix: unresolvable IPs (VPN, IPv6) → 'Unknown', never a blank row</span>
+  COALESCE(NULLIF(TRIM(
+    ARRAY_AGG(region ORDER BY event_timestamp LIMIT 1)[OFFSET(0)]
+  ), <span class="s">''</span>), <span class="s">'Unknown'</span>) AS region,
+  COUNTIF(event_name = <span class="s">'page_view'</span>) AS page_views,
+  MAX(session_engaged_int) AS engaged_session_int
+FROM ${ref(<span class="s">"stg_ga4_events"</span>)}
+GROUP BY user_pseudo_id, session_id</pre>
+      </div>
+
+      <div class="pipe-panel">
+        <p class="pt">Power BI on tested marts — the number everyone finally agrees on</p>
+        <p class="pd">Semantic model reads only the marts. Every metric has one definition, in code, upstream of the BI tool. This is a production dashboard from the pipeline (client identity removed).</p>
+        <img src="dash-marketing.jpg" alt="Production Power BI dashboard built on the pipeline" loading="lazy">
+      </div>
+
+      <div class="nav-btns">
+        <button onclick="pipeMove(-1)">← Prev</button>
+        <button onclick="pipeMove(1)">Next →</button>
+      </div>
+    </div>
+
+    <div class="article reveal">
+      <h3>Technical challenges</h3>
+      <p><strong>The pipeline was scanning full history every day.</strong> The staging model had no incremental filter — every daily run reprocessed the entire GA4 export. Adding a 3-day incremental window with <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px">updatePartitionFilter</code> cut daily scan volume to a fraction, with partitioning and clustering tuned for the dashboard's query patterns.</p>
+      <p><strong>Duplication only reproduced in production.</strong> The GA4 export duplicated events under specific client-side conditions we could never trigger in test. Diagnosis came from distribution analysis in SQL — comparing raw row counts against the UI's silently-deduplicated numbers, day by day, until the pattern isolated the key.</p>
+      <p><strong>"Session" meant three different things.</strong> Stakeholders carried Universal Analytics expectations; GA4 has an event model; the export has neither's session table. The fix was social as much as technical: one definition in code, plus reconciliation queries that <em>explain</em> variance vs the GA4 UI instead of arguing about it.</p>
+      <h3>Outcome</h3>
+      <p>Reporting became consistent across every team. Funnel analysis on clean data found checkout friction that contributed to a <strong>~20% conversion improvement</strong>, and zero-result search tracking handed the content team a prioritized topic list. The monthly numbers argument ended — the pipeline is the referenced source in decision meetings.</p>
+      <h3>Lessons</h3>
+      <p>Data trust is a stakeholder problem before it's a technical one. Reconciliation evidence, not architecture elegance, is what converts skeptics. And sessionization logic belongs in version-controlled SQL — never in a BI tool's formula layer.</p>
+    </div>
+  </div>
+</section>
+
+<section id="impact" style="background:var(--fog);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:80px 0">
+  <div class="wrap">
+    <span class="kicker reveal">IMPACT</span>
+    <h2 class="reveal">Numbers from real engagements</h2>
+    <div class="metrics">
+      <div class="metric reveal"><div class="n">20<b>%</b></div><div class="l">conversion lift — funnel analysis on the cleaned pipeline</div></div>
+      <div class="metric reveal"><div class="n">$200K</div><div class="l">reporting risk averted — Hallmark UA→GA4 migration, zero data loss</div></div>
+      <div class="metric reveal"><div class="n">20<b>+</b>hrs</div><div class="l">manual reporting eliminated monthly — SAP BEx → Power BI paginated</div></div>
+      <div class="metric reveal"><div class="n">0</div><div class="l">pre-consent requests — GDPR architecture, verified by network logs</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="architecture">
+  <div class="wrap">
+    <span class="kicker reveal">ARCHITECTURE</span>
+    <h2 class="reveal">The chain I build, stage by stage</h2>
+    <p class="lede reveal">Not a generic diagram — this is the production architecture behind the featured project. Watch it light up.</p>
+    <div class="arch-flow reveal">
+      <div class="arch-col" id="archflow">
+        <div class="stage"><span class="sn">Website / App</span><span class="sd">data layer contract</span></div>
+        <div class="arrow"></div>
+        <div class="stage"><span class="sn">GTM</span><span class="sd">consent-gated tags</span></div>
+        <div class="arrow"></div>
+        <div class="stage"><span class="sn">GA4</span><span class="sd">events + custom dimensions</span></div>
+        <div class="arrow"></div>
+        <div class="stage"><span class="sn">BigQuery raw</span><span class="sd">daily events_* export</span></div>
+        <div class="arrow"></div>
+        <div class="stage"><span class="sn">Staging · dedup</span><span class="sd">Dataform, assertion-tested</span></div>
+        <div class="arrow"></div>
+        <div class="stage"><span class="sn">Sessionization · attribution</span><span class="sd">the tables GA4 never gives you</span></div>
+        <div class="arrow"></div>
+        <div class="stage"><span class="sn">Marts</span><span class="sd">fct_sessions · fct_conversions · dim_users</span></div>
+        <div class="arrow"></div>
+        <div class="stage"><span class="sn">Power BI</span><span class="sd">semantic model · incremental refresh</span></div>
+        <div class="arrow"></div>
+        <div class="stage"><span class="sn">Executive dashboard</span><span class="sd">one number everyone agrees on</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" style="background:var(--fog);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <span class="kicker reveal">MORE PROJECTS</span>
+    <h2 class="reveal">Different problems, different stories</h2>
+
+    <div class="proj reveal">
+      <div class="visual">
+        <div class="dash">
+          <div class="row">
+            <div class="tile"><div class="l">REVENUE ACTUAL</div><div class="v">$4.21M <span>vs plan +2.4%</span></div></div>
+            <div class="tile"><div class="l">OPEX</div><div class="v">$1.37M <span>vs plan −1.1%</span></div></div>
+            <div class="tile"><div class="l">MARGIN</div><div class="v">31.2% <span>▲ 0.8pp</span></div></div>
+          </div>
+          <div class="bars"><i style="height:44%"></i><i style="height:52%"></i><i style="height:47%"></i><i style="height:58%"></i><i style="height:63%"></i><i style="height:55%"></i><i style="height:69%"></i><i style="height:72%"></i><i style="height:66%"></i><i style="height:78%"></i><i style="height:74%"></i><i style="height:85%"></i></div>
+        </div>
+        <p class="vis-note">REPRESENTATIVE — FINANCIAL DATA CONFIDENTIAL</p>
+      </div>
+      <div>
+        <span class="tag">WOLVERINE</span><span class="story">MIGRATION STORY</span>
+        <h3>Retiring SAP BEx without losing the numbers</h3>
+        <p class="sub">Finance ran on deprecated SAP BEx reports kept alive by manual effort and shrinking expertise. They wanted their exact formats — not a redesign.</p>
+        <dl>
+          <dt>The move</dt><dd>Audit-first migration: every metric, filter, and hierarchy documented before building pixel-faithful Power BI paginated reports. Parallel run with reconciliation on every figure before cutover.</dd>
+          <dt>The lesson</dt><dd>In legacy migrations the deliverable is continuity, not modernity. Match the old output exactly; improve later.</dd>
+        </dl>
+        <p class="impact">Impact: <b>20+ hrs/month</b> eliminated · key-person risk removed · logic finally documented.</p>
+      </div>
+    </div>
+
+    <div class="proj reveal">
+      <div>
+        <span class="tag">GDPR · ENTERPRISE WEB ESTATE</span><span class="story">DEBUGGING STORY</span>
+        <h3>The tags that fired before anyone said yes</h3>
+        <p class="sub">GA4, Ads, Meta, and LinkedIn fired on page load — before the consent banner. A compliance exposure most stacks quietly carry.</p>
+        <dl>
+          <dt>The scale</dt><dd>A real enterprise container: 52 tags, 39 triggers, 68 variables — 16 GA4 event tags, 15 custom HTML tags, ad pixels for Google, Microsoft, Meta and LinkedIn, plus deprecated tags dating back to 2017 that nobody remembered adding.</dd>
+          <dt>The hunt</dt><dd>Gating the container was easy. The hard part was hardcoded tags outside GTM that no trigger could block, and race conditions where tags beat the consent check at real page speeds — found by watching network logs, template by template, browser by browser.</dd>
+          <dt>The proof</dt><dd>A repeatable QA framework: zero network requests from gated vendors pre-consent, verified across regions. Evidence, not assurances — it passed legal review without findings.</dd>
+        </dl>
+        <p class="impact">Impact: <b>zero pre-consent collection</b> — with a functioning measurement stack, not a gutted one.</p>
+      </div>
+      <div class="visual">
+        <svg viewBox="0 0 460 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Consent gating flow diagram">
+          <defs><marker id="a2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="none" stroke="#1D9E75" stroke-width="1.5"/></marker></defs>
+          <rect x="10" y="20" width="130" height="44" rx="8" fill="#fff" stroke="#E6EAF2"/>
+          <text x="75" y="39" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#18202F">Page load</text>
+          <text x="75" y="54" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#55617A">no tags fire</text>
+          <rect x="165" y="20" width="130" height="44" rx="8" fill="#E4F5EE" stroke="#1D9E75"/>
+          <text x="230" y="39" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#0F6E56">CMP banner</text>
+          <text x="230" y="54" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#55617A">Termly / OneTrust</text>
+          <rect x="165" y="94" width="130" height="44" rx="8" fill="#FDF6EA" stroke="#EF9F27"/>
+          <text x="230" y="113" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#9c6410">GTM gate</text>
+          <text x="230" y="128" text-anchor="middle" font-family="Inter" font-size="9.5" fill="#55617A">consent check</text>
+          <rect x="320" y="70" width="130" height="40" rx="8" fill="#E4F5EE" stroke="#1D9E75"/>
+          <text x="385" y="94" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#0F6E56">granted → tags fire</text>
+          <rect x="320" y="122" width="130" height="40" rx="8" fill="#FBEBEB" stroke="#D85A5A"/>
+          <text x="385" y="146" text-anchor="middle" font-family="Inter" font-size="10.5" fill="#8f2323">denied → blocked</text>
+          <rect x="165" y="164" width="130" height="36" rx="8" fill="#fff" stroke="#E6EAF2"/>
+          <text x="230" y="186" text-anchor="middle" font-family="Inter" font-size="10" fill="#55617A">QA: network-log proof</text>
+          <line x1="140" y1="42" x2="163" y2="42" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#a2)"/>
+          <line x1="230" y1="64" x2="230" y2="92" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#a2)"/>
+          <line x1="295" y1="105" x2="318" y2="94" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#a2)"/>
+          <line x1="295" y1="127" x2="318" y2="138" stroke="#1D9E75" stroke-width="1.5" marker-end="url(#a2)"/>
+          <line x1="230" y1="162" x2="230" y2="140" stroke="#9AA6BC" stroke-width="1.5" stroke-dasharray="3 3"/>
+        </svg>
+        <p class="vis-note">CONSENT GATING FLOW</p>
+      </div>
+    </div>
+
+    <div class="proj reveal">
+      <div class="visual">
+        <img src="dash-lawyerbios.jpg" alt="Lawyer bios performance dashboard with tiering framework, names blurred" loading="lazy">
+        <p class="vis-note">PRODUCTION DASHBOARD — NAMES BLURRED FOR CONFIDENTIALITY</p>
+      </div>
+      <div>
+        <span class="tag">AMLAW 100 LAW FIRM</span><span class="story">BUSINESS TRANSFORMATION</span>
+        <h3>3,262 lawyer bios, ranked by what they earn</h3>
+        <p class="sub">A top law firm had thousands of attorney bio pages and no way to know which deserved SEO and content budget.</p>
+        <dl>
+          <dt>The shift</dt><dd>From "what happened?" to "what do we do Monday?" — every bio scored on traffic, engagement, and conversions, then sorted into a 4-tier action framework: stars, fix-first, promote, low priority.</dd>
+          <dt>The adoption</dt><dd>Marketing stopped debating anecdotes. Tier lists became the agenda.</dd>
+        </dl>
+        <p class="impact">Impact: <b>SEO &amp; content budget reallocated by tier</b> — opinion replaced with data.</p>
+      </div>
+    </div>
+
+    <div class="proj reveal">
+      <div>
+        <span class="tag">AMLAW 100 LAW FIRM</span><span class="story">INNOVATION STORY</span>
+        <h3>Measuring AI search before most firms knew it existed</h3>
+        <p class="sub">Visitors started arriving from ChatGPT, Perplexity, and Gemini. Leadership asked the question nobody had a dashboard for: are AI-referred visitors any good?</p>
+        <dl>
+          <dt>Built</dt><dd>LLM/GEO referral classification in the GA4 → BigQuery pipeline, plus a dashboard answering leadership's actual questions: AI-visitor quality vs SEO, month-over-month LLM growth, and which content categories AI engines cite.</dd>
+          <dt>The finding</dt><dd>AI-referred sessions converted at a higher rate than organic search (1.61% vs 1.09% on high-value actions) — small volume, outsized quality. That reframed the firm's content strategy for generative search.</dd>
+        </dl>
+        <p class="impact">Impact: <b>first visibility into AI-search performance</b> — a measurement category most firms still can't see.</p>
+      </div>
+      <div class="visual">
+        <img src="dash-llm-geo.jpg" alt="AI search LLM and GEO performance dashboard comparing AI-referred and SEO traffic quality" loading="lazy">
+        <p class="vis-note">PRODUCTION DASHBOARD — CLIENT IDENTITY REMOVED</p>
+      </div>
+    </div>
+
+    <div class="proj reveal">
+      <div class="visual">
+        <img src="dash-donor.jpg" alt="Donor analytics dashboard showing traffic spike and donation conversion rate decomposition" loading="lazy">
+        <p class="vis-note">PRODUCTION DASHBOARD — CLIENT IDENTITY REMOVED</p>
+      </div>
+      <div>
+        <span class="tag">NATIONAL MEMBERSHIP NONPROFIT</span><span class="story">OPTIMIZATION STORY</span>
+        <h3>The conversion rate that lied</h3>
+        <p class="sub">The donation conversion rate collapsed −85.7% month over month. Panic — until the dashboard told the whole story.</p>
+        <dl>
+          <dt>The decomposition</dt><dd>Traffic had spiked +1,264% on viral content while donations actually rose +65.5% and average gift size doubled (+99%). The "collapse" was denominator dilution — millions of new low-intent visitors, not a broken funnel.</dd>
+          <dt>Why it worked</dt><dd>The dashboard was built to decompose, not just display: every rate KPI sits beside its numerator and denominator, with donor journey and funnel views (on the same GA4 → BigQuery → Dataform pipeline) to separate mix shift from real failure.</dd>
+        </dl>
+        <p class="impact">Impact: <b>stopped a false alarm from redirecting strategy</b> — and turned a traffic spike into a donor-acquisition analysis instead.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="workflow">
+  <div class="wrap">
+    <span class="kicker reveal">HOW I WORK</span>
+    <h2 class="reveal">Process is the product</h2>
+    <p class="lede reveal">Enterprises don't just buy dashboards — they buy a repeatable way of getting to trustworthy ones.</p>
+    <div class="flow-h reveal">
+      <div class="wstep"><div class="wn">01</div><div class="wt">Discovery</div><div class="wd">What decisions need data they don't trust today?</div></div>
+      <span class="wsep">→</span>
+      <div class="wstep"><div class="wn">02</div><div class="wt">Audit</div><div class="wd">Tags, data layer, consent, warehouse — inventory before opinion.</div></div>
+      <span class="wsep">→</span>
+      <div class="wstep"><div class="wn">03</div><div class="wt">Implementation</div><div class="wd">Tracking, models, dashboards — in code, in version control.</div></div>
+      <span class="wsep">→</span>
+      <div class="wstep"><div class="wn">04</div><div class="wt">Validation</div><div class="wd">Assertions, reconciliation, network-log proof.</div></div>
+      <span class="wsep">→</span>
+      <div class="wstep"><div class="wn">05</div><div class="wt">Documentation</div><div class="wd">Every metric defined once, findable by the next person.</div></div>
+      <span class="wsep">→</span>
+      <div class="wstep"><div class="wn">06</div><div class="wt">Training</div><div class="wd">Teams run it without me. That's the exit test.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy" style="background:var(--fog);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:90px 0">
+  <div class="wrap">
+    <span class="kicker reveal">ENGINEERING PHILOSOPHY</span>
+    <h2 class="reveal">Four rules, in order</h2>
+    <div class="phil">
+      <div class="p-card reveal"><span class="pn">01</span><h3>Measure correctly</h3><p>A documented data layer contract. GTM reads; it never scrapes. Consent is enforced at the gate, not promised in a policy.</p></div>
+      <div class="p-card reveal"><span class="pn">02</span><h3>Model correctly</h3><p>Dedup and sessionization live in version-controlled SQL, upstream of every report. One metric, one definition.</p></div>
+      <div class="p-card reveal"><span class="pn">03</span><h3>Validate everything</h3><p>Assertions fail the build before bad data reaches a dashboard. Reconciliation queries explain variance instead of arguing about it.</p></div>
+      <div class="p-card reveal"><span class="pn">04</span><h3>Only then visualize</h3><p>The dashboard is the last mile, not the fix. If the number is wrong upstream, no visual will save it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="github">
+  <div class="wrap">
+    <span class="kicker reveal">GITHUB</span>
+    <h2 class="reveal">Open work</h2>
+    <p class="lede reveal">Production patterns rebuilt on Google's public GA4 dataset — open the code, don't just read claims.</p>
+    <div class="gh reveal">
+      <div>
+        <h3>github.com/vanu270</h3>
+        <p>The flagship repo rebuilds the featured pipeline end to end: layered Dataform models, dedup and sessionization SQL, assertions that fail the build on bad data, and reconciliation queries against the GA4 UI.</p>
+        <p style="margin-top:16px"><a class="btn btn-primary" href="https://github.com/vanu270" style="font-size:14.5px;padding:12px 22px">Visit GitHub →</a></p>
+      </div>
+      <ul class="repos">
+        <li><a href="https://github.com/vanu270/ga4-bigquery-dataform-pipeline">ga4-bigquery-dataform-pipeline</a>
+          <span>Full pipeline on public GA4 data</span>
+          <div class="chips"><i>SQLX models</i><i>assertions</i><i>architecture diagram</i><i>PBI template</i></div></li>
+        <li><a href="https://github.com/vanu270/consent-mode-gtm-architecture">consent-mode-gtm-architecture</a>
+          <span>Consent gating + QA proof scripts</span>
+          <div class="chips"><i>GTM recipes</i><i>network-log QA</i><i>consent mode</i></div></li>
+        <li><a href="https://github.com/vanu270/sap-bex-powerbi-migration-playbook">sap-bex-powerbi-migration-playbook</a>
+          <span>Migration methodology + reconciliation</span>
+          <div class="chips"><i>mapping templates</i><i>reconciliation checklist</i><i>paginated reports</i></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="resources" style="background:var(--fog);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="wrap">
+    <span class="kicker reveal">RESOURCES</span>
+    <h2 class="reveal">Free tools I wish existed when I started.</h2>
+    <div class="res-grid">
+      <div class="res reveal"><span class="mono-tag">CHECKLIST</span><h3>GTM audit checklist</h3><p>The 30-point audit I run on every new engagement.</p><a href="resources.html#gtm-audit">Read →</a></div>
+      <div class="res reveal"><span class="mono-tag">GUIDE</span><h3>GA4 event naming guide</h3><p>Conventions that keep a property queryable years later.</p><a href="resources.html#ga4-naming">Read →</a></div>
+      <div class="res reveal"><span class="mono-tag">SQL LIBRARY</span><h3>BigQuery SQL for GA4</h3><p>Dedup, sessionization, reconciliation — copy-paste.</p><a href="resources.html#sql-library">Read →</a></div>
+      <div class="res reveal"><span class="mono-tag">GUIDE</span><h3>Power BI performance</h3><p>Why your dashboard is slow, in the right order.</p><a href="resources.html#pbi-performance">Read →</a></div>
+      <div class="res reveal"><span class="mono-tag">CHECKLIST</span><h3>Consent mode checklist</h3><p>Prove compliance with network logs, not promises.</p><a href="resources.html#consent-checklist">Read →</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <span class="kicker reveal">ABOUT</span>
+    <h2 class="reveal">Why I do this</h2>
+    <div class="about-grid">
+      <div class="portrait reveal" id="portrait"><img src="photo.jpg" alt="Ashish Tripathi" onerror="this.remove();document.getElementById('portrait').textContent='AT'"></div>
+      <div class="about-copy reveal">
+        <p>My first job was SEO, in Mumbai, in 2014. One month a client's traffic report showed a glorious spike — everyone celebrated. I dug in and found it was a bot crawling one broken page. Nobody had checked. That moment set the question I've been answering ever since: <em>how much of what companies "know" is actually true?</em></p>
+        <div class="pull">The problems that excite me are the ones where the number is wrong and nobody knows why.</div>
+        <p>That's why I went deep instead of wide: four years at TCS building marketing analytics for Air Canada, Hasbro, and Taj Hotels; then Hallmark's UA→GA4 migration at Astound with zero data loss; now full pipeline engineering at Bitwise for Applebee's/IHOP, Gartner, and Wolverine. Duplicate events, consent race conditions, undocumented BEx logic — the unglamorous places where trust is actually won or lost.</p>
+        <p>Clients keep me around for the same reason each time: when my number differs from another tool's, I can show exactly why — in SQL, with evidence. I work remotely from Bangalore with teams across the US and Europe, and I write about this stuff because almost nobody else does.</p>
+        <div class="stack">
+          <span>GA4</span><span>GTM</span><span>BigQuery</span><span>Dataform</span><span>Power BI</span><span>Looker Studio</span><span>Adobe Analytics</span><span>Tealium</span><span>JavaScript</span><span>SQL</span><span>Consent Mode</span><span>OneTrust</span><span>Termly</span><span>GA4 Certified</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="reveal">Have a measurement problem your current stack can't answer?</h2>
+    <p class="reveal">I'm open to enterprise analytics consulting, audits, and senior analytics engineering roles.</p>
+    <a class="btn btn-primary reveal" href="mailto:tashitripathi35@gmail.com">tashitripathi35@gmail.com</a>
+    <div class="links">
+      <a href="https://www.linkedin.com/in/ashish-tripathi-778185285/">LinkedIn</a> ·
+      <a href="https://github.com/vanu270">GitHub</a> ·
+      <a href="Ashish_Tripathi_CV_v4.pdf" download>Resume (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<div id="consent-banner" style="display:none;position:fixed;bottom:20px;left:20px;right:20px;max-width:520px;margin:0 auto;background:var(--ink);color:#C9D2E3;border:1px solid #2A3650;border-radius:14px;padding:20px 24px;z-index:50;font-size:14px;line-height:1.6">
+  This site practices what it preaches: GA4 runs behind Google Consent Mode, default-denied. Decline and nothing fires — verify it in your Network tab.
+  <div style="margin-top:12px;display:flex;gap:10px">
+    <button onclick="consentChoice(true)" style="background:var(--teal);color:#fff;border:0;border-radius:8px;padding:9px 20px;font-weight:600;font-size:13.5px;cursor:pointer;font-family:'Inter',sans-serif">Accept analytics</button>
+    <button onclick="consentChoice(false)" style="background:transparent;color:#C9D2E3;border:1px solid #2A3650;border-radius:8px;padding:9px 20px;font-size:13.5px;cursor:pointer;font-family:'Inter',sans-serif">Decline</button>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">© 2026 Ashish Tripathi · Bangalore, India · Analytics on this site runs behind Consent Mode, default-denied — decline and nothing fires. Check the Network tab.</div>
+</footer>
+
+<script>
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } }), { threshold: 0.12 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+const steps = document.querySelectorAll('.pipe-steps button');
+const panels = document.querySelectorAll('.pipe-panel');
+let cur = 0;
+function pipeGo(i){
+  cur = (i + panels.length) % panels.length;
+  steps.forEach((b,k)=>b.classList.toggle('active', k===cur));
+  panels.forEach((p,k)=>p.classList.toggle('active', k===cur));
+}
+function pipeMove(d){ pipeGo(cur + d); }
+steps.forEach((b,k)=>b.addEventListener('click', ()=>pipeGo(k)));
+
+const stored = localStorage.getItem('consent_choice');
+if (stored === 'granted') {
+  gtag('consent', 'update', { analytics_storage: 'granted' });
+} else if (stored === null) {
+  document.getElementById('consent-banner').style.display = 'block';
+}
+function consentChoice(ok){
+  localStorage.setItem('consent_choice', ok ? 'granted' : 'denied');
+  if (ok) gtag('consent', 'update', { analytics_storage: 'granted' });
+  document.getElementById('consent-banner').style.display = 'none';
+}
+
+const flow = document.getElementById('archflow');
+const aio = new IntersectionObserver(es => es.forEach(e => {
+  if (!e.isIntersecting) return;
+  aio.unobserve(flow);
+  const items = flow.querySelectorAll('.stage, .arrow');
+  items.forEach((el, i) => setTimeout(() => el.classList.add('lit'), 200 + i * 180));
+}), { threshold: 0.25 });
+aio.observe(flow);
+</script>
+</body>
+</html>
